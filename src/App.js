@@ -3,19 +3,22 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Users from "./users/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
+import RootLayout from "./shared/pages/RootLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Let's start!</h1>,
-  },
-  {
-    path: "/users",
-    element: <Users />,
-  },
-  {
-    path: "/places/new",
-    element: <NewPlace />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Users />,
+      },
+      {
+        path: "/places/new",
+        element: <NewPlace />,
+      },
+    ],
   },
 ]);
 
