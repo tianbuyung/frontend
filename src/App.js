@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Users from "./users/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
 import RootLayout from "./shared/pages/RootLayout";
+import UserPlaces from "./places/pages/UserPlaces";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/places/new",
         element: <NewPlace />,
+      },
+      {
+        path: "/:userId/places",
+        element: <UserPlaces />,
       },
     ],
   },
